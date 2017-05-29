@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form>
+    <input type='text' id='username' placeholder="5 characters or more" />
+    <button type="button" onclick="submitForm();">Submit</button>
+    <div id="msg"></div>
+</form>
+<script type="text/javascript">
+function submitForm() {
+    var usernameElement = document.getElementById('username');
+
+    // remember usernameElement is a DOM element and we need to 'extract' it's value
+    var username = usernameElement.value;
+
+    //now for the clever bit where we check the length and notify the user appropriately
+    if (username.length < 5) {
+        document.getElementById('msg').innerHTML = "The supplied username is too short, try again using 5 or more characters";
+    } else {
+        alert("Thank you " + username) + "!";
+    }
+}
+</script>
+</body>
+</html>
